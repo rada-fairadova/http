@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpDesk</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>HelpDesk</h1>
+            <button class="btn btn-primary" id="addTicketBtn">Добавить тикет</button>
+        </header>
+        
+        <main class="main">
+            <div class="tickets-container" id="ticketsContainer">
+                <div class="loading" id="loading">Загрузка...</div>
+            </div>
+        </main>
+    </div>
+
+    <div class="modal" id="ticketModal">
+        <div class="modal-content">
+            <h2 id="modalTitle">Добавить тикет</h2>
+            <form id="ticketForm">
+                <div class="form-group">
+                    <label for="ticketName">Краткое описание:</label>
+                    <input type="text" id="ticketName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="ticketDescription">Подробное описание:</label>
+                    <textarea id="ticketDescription" name="description" rows="4"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">Отмена</button>
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="deleteModal">
+        <div class="modal-content">
+            <h2>Удалить тикет</h2>
+            <p>Вы уверены, что хотите удалить этот тикет? Это действие необратимо.</p>
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" id="cancelDeleteBtn">Отмена</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Удалить</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="detailsModal">
+        <div class="modal-content">
+            <h2>Детали тикета</h2>
+            <div id="detailsContent"></div>
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" id="closeDetailsBtn">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
